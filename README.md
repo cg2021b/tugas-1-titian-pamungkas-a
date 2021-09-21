@@ -10,15 +10,15 @@ Silakan melakukan instruksi di bawah ini:
 5. Buat sebuah file README.md yang berisikan nama benda berikut empat foto yang telah Anda ambil sebelumnya.
 6. Jangan lupa untuk melakukan commit dan push perubahan.
 
-Kanan atas
+##Kanan atas
 ![20210921_233557](https://user-images.githubusercontent.com/77373958/134213710-dfb48afa-d102-4419-bb52-96e45fba34f5.jpg)
 
-Kiri atas
+##Kiri atas
 ![20210921_233621](https://user-images.githubusercontent.com/77373958/134213762-2a10d518-e160-4049-a81d-e2d108dd0837.jpg)
 
-Depan atas
+##Depan atas
 ![20210921_233539](https://user-images.githubusercontent.com/77373958/134213811-ed4e97ad-22a5-4ee8-99a9-08486910f0dd.jpg)
 
-Belakang atas
+##Belakang atas
 ![20210921_233607](https://user-images.githubusercontent.com/77373958/134213847-9138f4c7-e641-4ab7-8646-85de83569cdc.jpg)
 
