@@ -23,7 +23,7 @@ Silakan melakukan instruksi di bawah ini:
 ## Belakang atas
 ![20210921_233607](https://user-images.githubusercontent.com/77373958/134213847-9138f4c7-e641-4ab7-8646-85de83569cdc.jpg)
 
-#tugas Three.js
+# tugas Three.js
 
 1. Buat dan tampilkan beberapa geometri dan diberi animasi, beberapa obyek ditampilkan wireframe
 2. Gunakan beberapa jenis material 
@@ -31,5 +31,5 @@ Silakan melakukan instruksi di bawah ini:
 
 Pada tugas ini, saya membuat membuat objek sebanyak lima buah dengan bentuk yang berbeda dan serta material yang berbeda dengan urutan :
 
-###Torus - TorusKnot - Cone - OctaHedron - Cylinder
+### Torus - TorusKnot - Cone - OctaHedron - Cylinder
 
