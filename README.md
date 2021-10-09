@@ -33,3 +33,7 @@ Pada tugas ini, saya membuat membuat objek sebanyak lima buah dengan bentuk yang
 
 #### Torus/PhysicalMaterial - TorusKnot/ToonMaterial - Cone/BasicMaterial - OctaHedron/PhongMaterial - Cylinder/lambertMaterial
 
+![1_](https://user-images.githubusercontent.com/77373958/136675622-2f7ab948-1dd4-4215-90f6-46b89af5f543.gif)
+
+Kemudian, saya memberikan 5 efek lighting yang berbeda
+
