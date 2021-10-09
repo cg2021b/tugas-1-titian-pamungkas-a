@@ -35,5 +35,25 @@ Pada tugas ini, saya membuat membuat objek sebanyak lima buah dengan bentuk yang
 
 ![1_](https://user-images.githubusercontent.com/77373958/136675622-2f7ab948-1dd4-4215-90f6-46b89af5f543.gif)
 
-Kemudian, saya memberikan 5 efek lighting yang berbeda
+Kemudian, saya memberikan 5 efek lighting yang berbeda yaitu :
+## Ambient Light
+Ambient light adalah cahaya yang menerangi secara global dan sama pada setiap sudut. Hanya terdapat parameter warna.
+![2_](https://user-images.githubusercontent.com/77373958/136676331-1571ab1e-88f5-41a6-b2af-4b7fa1b2e916.gif)
+
+## Hemisphere Light
+Hemisphere light adalah cahaya yang menerangi dari atas scene, dengan terdapat color fading. Terdapat parameter Warna utama, warna fading, dan intensity
+![3_](https://user-images.githubusercontent.com/77373958/136676366-76312d2b-3e3b-4fee-b9b7-01c9d22438fc.gif)
+
+## Directional Light
+Directional Light adalah cahaya dengan arah yang spesifik (seperti matahari dan jauh).
+![4_](https://user-images.githubusercontent.com/77373958/136676400-6f3e7a59-0e04-4340-a2c0-edbfeb37e786.gif)
+
+## Point Light
+Point Light adalah cahaya yang terpusat pada satu titik dan menyebar ke semua arah.
+![5_](https://user-images.githubusercontent.com/77373958/136676410-016f77e4-0398-42bd-ba9d-06d315e19d43.gif)
+
+## Spot Light
+Spot Light adalah cahaya yang berasal dari satu titik kepada arah tertentu, dan menyebar semakin luas ketika semakin jauh.
+![6_](https://user-images.githubusercontent.com/77373958/136676421-26f4554e-27c1-49b3-8298-3c28d6a71ee5.gif)
+
 
