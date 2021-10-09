@@ -1,5 +1,6 @@
 # tugas-1-titian-pamungkas-a
 tugas-1-titian-pamungkas-a created by GitHub Classroom
+tugas-individu-threejs (below)
 
 Silakan melakukan instruksi di bawah ini:
 
@@ -21,4 +22,14 @@ Silakan melakukan instruksi di bawah ini:
 
 ## Belakang atas
 ![20210921_233607](https://user-images.githubusercontent.com/77373958/134213847-9138f4c7-e641-4ab7-8646-85de83569cdc.jpg)
+
+#tugas Three.js
+
+1. Buat dan tampilkan beberapa geometri dan diberi animasi, beberapa obyek ditampilkan wireframe
+2. Gunakan beberapa jenis material 
+3. gunakan beberapa jenis lighting (AmbientLight, HemisphereLight, DirectionalLight, PointLight, Spotlights)
+
+Pada tugas ini, saya membuat membuat objek sebanyak lima buah dengan bentuk yang berbeda dan serta material yang berbeda dengan urutan :
+
+###Torus - TorusKnot - Cone - OctaHedron - Cylinder
 
