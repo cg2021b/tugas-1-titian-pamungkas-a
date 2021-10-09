@@ -31,5 +31,5 @@ Silakan melakukan instruksi di bawah ini:
 
 Pada tugas ini, saya membuat membuat objek sebanyak lima buah dengan bentuk yang berbeda dan serta material yang berbeda dengan urutan :
 
-### Torus - TorusKnot - Cone - OctaHedron - Cylinder
+### Torus/PhysicalMaterial - TorusKnot/ToonMaterial - Cone/BasicMaterial - OctaHedron/PhongMaterial - Cylinder/lambertMaterial
 
