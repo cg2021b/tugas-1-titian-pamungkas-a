@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 3</title>
+    <script src="js/three.min.js"></script>
+    <script src="js/controls/OrbitControls.js"></script>
+    <style>
+        #skor {
+            position: absolute;
+            padding: 20px;
+            margin: 10px;
+            font-size: 48px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id = "skor"></div>
+</body>
+<script>
+    let scene, camera, renderer, cube, rayCast, mouse;
+    let totalScore = 0, selected = [], original = [];
+
+    let score = document.getElementById("skor");
+    let allColor = ["#0000ff", "#00ffff", "#ff00ff", "#ff0000", "#ffff00", "#00ff00"]
+        
+    let createCube = function() {
+        let geometry = new THREE.BoxGeometry(7, 7, 7);
+        let material = new THREE.MeshPhongMaterial({color: allColor[Math.floor(Math.random() * 6)]});
+        cube = new THREE.Mesh( geometry, material );
+        cube.position.set(Math.floor(Math.random() * 101)-50, Math.floor(Math.random() * 101)-50, Math.floor(Math.random() * 101)-50);
+        scene.add(cube);
+    };
+    
+    let onMouseClick = function (e) {
+        clicked = 0;
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = - (e.clientY / window.innerHeight) * 2 + 1;
+        rayCast.setFromCamera(mouse, camera);
+
+        let intersects = rayCast.intersectObjects(scene.children, false);
+        if (intersects[0]) {
+            let firstObject = intersects[0].object;
+            if (selected.length > 0) {
+                if (firstObject.uuid === selected[0].uuid) {
+                    firstObject.material.emissive.setHex(0x000000);
+                    selected = [];
+                    return;
+                }
+            }
+            selected.push(firstObject);
+            original.push(firstObject.material.color.getHex());
+            if (selected.length > 1) {
+                addScore();
+            }
+            if (selected.length == 1) {
+                if (clicked == 1) {
+                    selected.pop(firstObject);
+                    original.pop(firstObject.material.color.getHex());
+                }
+                clicked = 1;
+            }
+        }
+    }
+
+    function erase(kotak) {
+        kotak.geometry.dispose();
+        kotak.material.dispose();
+        scene.remove(kotak);
+        renderer.renderLists.dispose();
+    }
+
+    let addScore = function () {
+        if (selected[0].material.color.getHex() === selected[1].material.color.getHex()) {
+            selected.forEach(object => {
+                erase(object);
+            });
+            totalScore += 1;
+        }
+        score.innerHTML = totalScore;
+        original.length = 0;
+        selected.length = 0;
+    }
+
+    // set up the environment - 
+    // initiallize scene, camera, objects and renderer
+    let init = function() {
+        // 1. create the scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xffffff);
+        
+        // 2. create an locate the camera       
+        camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 
+                    1, 1000);
+        camera.position.z = 300;
+
+        light = new THREE.PointLight(0xffffff, 1);
+        light.position.set(0, 0, 100);
+        scene.add(light);
+
+        light1 = new THREE.PointLight(0xffffff, 1);
+        light1.position.set(0, 0, -100);
+        scene.add(light1);
+        
+        // 3. create an locate the object on the scene           
+        for (i=0;i<1;i++) {
+            createCube();
+        }
+
+        rayCast = new THREE.Raycaster();
+        mouse = new THREE.Vector2();
+        mouse.x = mouse.y = -1;
+        
+        // 4. create the renderer     
+        renderer = new THREE.WebGLRenderer();   
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        document.body.appendChild(renderer.domElement);
+        document.addEventListener("click", onMouseClick);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        renderer.render(scene, camera, controls);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      
+    };
+  
+    
+    let clock = new THREE.Clock(), flag = 0, speed = 0.03, base = 0.03;
+
+    let mainLoop = function () {
+        if (scene.children.length >= 24) {flag = 0; speed = base; score.innerHTML = totalScore;}
+        else {flag += speed;}
+        
+        if (flag > 1) {createCube(); flag = 0; speed += 0.03;}
+        const elapsedTime = clock.getElapsedTime();
+        
+        if (selected.length > 0) {selected[0].material.emissive.setHex(elapsedTime % 0.5>=0.25? original[0]:0x000000);        }
+        renderer.render(scene, camera)
+        requestAnimationFrame(mainLoop)
+    };
+    
+    ///////////////////////////////////////////////
+    init();
+    mainLoop();
+</script>
+</html>
