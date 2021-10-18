@@ -1,6 +1,6 @@
 # tugas-1-titian-pamungkas-a
 tugas-1-titian-pamungkas-a created by GitHub Classroom
-tugas-individu-threejs (below)
+### tugas-individu-threejs (below)
 
 Silakan melakukan instruksi di bawah ini:
 
